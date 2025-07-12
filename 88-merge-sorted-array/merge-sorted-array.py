@@ -6,7 +6,7 @@ class Solution:
         last = m + n - 1
 
         while m > 0 and n > 0:
-            if nums2[n-1] > nums1[m-1]:
+            if nums1[m-1] < nums2[n-1]:
                 nums1[last] = nums2[n-1]
                 n -= 1
             else:
@@ -14,11 +14,9 @@ class Solution:
                 m -= 1
             last -= 1
 
-        #fill nums1 will leftover nums2
+        #leftover of nums2 in nums1
+
         while n > 0:
             nums1[last] = nums2[n-1]
             n -= 1
             last -= 1
-
-
-
